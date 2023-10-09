@@ -4,8 +4,15 @@ function alo_mundo () {
   alert ("projeto iniciado! alo!")
 }
 
-escrever = msg => alert(msg);
+let a  = "";
+let b  = "";
+let valor = "";
+let executar  = ""; 
+let temPonto = false;
+let desligada = false;
 
+
+escrever = msg => alert(msg);
 soma = (a,b) => Number(a)+Number(b);
 sub = (a,b) => Number(a)-Number(b);
 mult = (a,b) => Number(a)*Number(b);
@@ -23,32 +30,20 @@ equacao2Grau = (a,b,c) => {
 }
 valor = "";
 
-let a  = 0;
-let b  = 0;
-let resultado  = 0;
-let executar  = ""; 
-let temPonto = false;
-let desligada = true;
-
-soma = (a,b) => a+b;
-sub = (a,b) => a-b;
-mult = (a,b) => a*b;
-div = (a,b) => a/b;
-raiz = a => Math.sqrt(a);   
 
 function mostrar_resultado(){
-   document.getElementById("resultado").value = valor
+   document.getElementById("resultado").value = valor;
 }
 
+
 function calcular(){
+  if (desligada) return;
   if (executar != ""){
    b=valor;
-   if (executar == "soma") valor = soma(Number(a),Number(b));
+   if (executar == "soma") valor = soma(a,b);
    if (executar == "sub")  valor = sub(a,b);
    if (executar == "div")  valor = div(a,b);
    if (executar == "mult")  valor = mult(a,b);
-   if (executar == "porc")  valor = mult(div(Number(a),Number(100)),b)
-   if (executar == "raiz")  valor = raiz(Number(a))
    mostrar_resultado();
    executar = "";
    a  = "";
@@ -58,6 +53,38 @@ function calcular(){
   }
   
 }
+
+
+function desliga(){
+  if (desligada){
+    desligada=false;
+   zerar();
+  } else {
+   zerar();
+   mostrar_resultado();    
+   desligada= true;
+  }
+  return desligada;
+
+}
+
+
+
+function raiz_quadrada(){
+  valor = raiz(valor);
+ mostrar_resultado();
+ }
+ 
+ function porcentagem(){
+   if(executar == "mult"){
+     b = valor;
+     valor= div(mult(a,b),100);
+     mostrar_resultado();
+     valor= "";
+   }
+ }
+ 
+ 
 
 // function digitando(tecla){
 //  if(executar == ""){
@@ -69,15 +96,6 @@ function calcular(){
 //  }
 // }
 
-function desliga(){
-  if (desligada){
-   zerar();
-  } else {
-   valor = "";
-   mostrar_resultado();    
-  }
-  desligada = !desligada;
-}
 function zerar(){
   a="";
   b="";
