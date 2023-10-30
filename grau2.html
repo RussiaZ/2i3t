@@ -5,16 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equação de Segundo Grau</title>
-
+    <link rel="stylesheet" href="./css/2grau.css">
+    <script src="./script/script.js"></script>
 </head> 
 <body>
     <section class="segundo_grau">
        <div>
-        <select name="" id="">
+
+
+
+        <div>
+        <select name="sinal_a" onchange="set_sinal_a()" id="sinal_a">
             <option selected value="+">+</option>
             <option value="-">-</option>
         </select>
-      
+       <input class="entrada" type="number"  onchange="set_valor_a()" id="valor_a">
+       <span>X<sup>2</sup></span>
+       
+
+
+       <select name="sinal_b" onchange="set_sinal_b()" id="sinal_b">
+        <option selected value="+">+</option>
+        <option value="-">-</option>
+    </select>
+   <input class="entrada" type="number" onchange="set_valor_b()" id="valor_b">
+   <span>X</span>
+   
+
+   <select name="sinal_c" onchange="set_sinal_c()" id="sinal_c">
+    <option selected value="+">+</option>
+    <option value="-">-</option>
+</select>
+<input class="entrada" type="number" onchange="set_valor_c()" id="valor_c">
+<span> = 0</span>
+
+
+
+<div>
+    Delta:<span id="delt"> </span></div>  <!--- tem de arrumar o delta, não aparece. --->
+    <div> Resultado: <span id="raiz">
+
+    </span></div>
+
+<div><span><sup>'</sup> = </span></div>
+<div><span><sup>''</sup> = </span></div>
+       
+
+ <!---   </div>
         <input class="variavel" type="text"> <span>X <sup>2</sup>        </span>
         <select name="" id="">
             <option selected value="+">+</option>
@@ -35,6 +72,7 @@
         <div> <span id="delta">Delta = </span></div> 
         <div> <span id="x1">x <sub>1</sub></span>
                 <span id="x2">x <sub>2</sub></span></div> 
-    </section>
+    </section> --->
+   
 </body>
 </html>
