@@ -21,16 +21,16 @@ soma = (a,b) => Number(a)+Number(b);
 sub = (a,b) => Number(a)-Number(b);
 mult = (a,b) => Number(a)*Number(b);
 div = (a,b) => Number(a)/Number(b);
-raiz = a => Math.sqrt(Number(a));
+raiz = a => Math.sqrt(a);
 equacao2Grau = (a,b,c) => {
-
-   let delta = sub(mult(b,b),mult(4,mult(a,c)));
-
-   if (delta<0) return "Não possui raiz real.";
-   if (delta==0) return "X1 = X2 = " + div(-b,mult(2,a)); 
-
-   return "A raiz do X1 é de = " + div(soma(-b,raiz(delta)),mult(2,a)) + 
-          ", enquanto a raiz de X2 é = " + div(sub(-b,raiz(delta)),mult(2,a));
+  
+  let delta = sub(mult(b, b), mult(4, mult(a, c)));
+  document.getElementById("delta").innerHTML = delta;
+  
+  if (delta < 0) return "Não possui raiz real.";
+  if (delta == 0) return "x<sub>1</sub> = x<sub>2</sub> = " + div(-b, mult(2, a));
+  return  "x<sub>1</sub> = " + div(soma(-b, raiz(delta)), mult(2, a)) +
+  "  x<sub>2</sub> = " + div(sub(-b, raiz(delta)), mult(2, a));
 }
 valor = "";
 
@@ -169,6 +169,33 @@ const set_valor_b = () => {
 const set_valor_c = () => {
   c = document.getElementById("valor_c").value;
   calcular_equacao();
+}
+
+
+let pa_a1 = "";
+let pa_n = "";
+let pa_r = "";
+const setpa_a1 = () => {
+    pa_a1 = Number(document.getElementById("pa_a1").value);
+    mostrarpa_seq();
+}
+const setpa_n = () => {
+    pa_n = Number(document.getElementById("pa_n").value);
+    mostrarpa_seq();
+}
+const setpa_r = () => {
+    pa_r = Number(document.getElementById("pa_r").value);
+    mostrarpa_seq();
+}
+const mostrarpa_seq = () => {
+    let pa = "";
+    if(pa_a1 != "") pa += pa_a1;
+    if(pa_r != "" && pa_n != ""){
+        for (let i = 1; i < pa_n; i++){
+            pa += ", " + (i*pa_r)*pa_a1;
+        }
+    }
+    document.getElementById("pa_seq").innerHTML = pa;
 }
 
 
