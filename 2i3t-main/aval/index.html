@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <script src="script.js"></script>
+</head>-
+<body onload="atualizar_lista()">
+    <input type="text" id="nome"><br>
+    <br>
+
+
+    <div class="butano">
+    <button onclick="insere_ultimo()">Insere Ultimo</button><br>
+    <button onclick="del_ultimo()">Delete Primeio</button><br>
+
+    <button onclick="insere_pri()">Insere Primeiro</button><br>
+    <button onclick="del_pri()">Delete Ultimo</button><br>
+
+    <button onclick="ordZU()">Ordenar numeros (Decrescente)</button><br>
+    <button onclick="ordUZ()">Ordenar numeros (Crescente)</button><br>
+
+
+    <button onclick="ordZA()">Ordenar palavras (Z para A)</button><br>
+    <button onclick="ordAZ()">Ordenar palavras (A para Z)</button><br>
+
+
+    <button onclick="limp()">Limpar lista</button><br>
+
+</div>
+
+<br> <div class="listagem"><h1>Lista:</h1> <br>
+    <span id="lista"></span>
+</div>
+    <style>
+     body{
+        background-color: rgb(160, 160, 160);
+        color: black;
+        text-align: center;
+     }
+
+     input{
+        border-radius: 7px;
+        border-width: 5px;
+        border-style: groove; }
+        
+     .listagem{
+        background-color: rgb(181, 191, 202);
+     }
+     
+
+     button{ border-radius: 60px;
+     border-color: rgb(0, 0, 0);}
+    
+     .butano{
+        display: grid;
+    grid-template-columns: 50%;
+    justify-content: center;
+     }
+    </style>
+</body>
+</html>

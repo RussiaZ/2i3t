@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressões</title>
+    <script src="./script/script.js"></script>
+</head>
+
+<body>
+    <section id="pa">
+        <h1>Progressão Aritmética</h1>
+        P.A. a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> ... a<sub>n</sub> <br><br>
+        Cálculo da razão: r = a<sub>2</sub> - a<sub>1</sub> <br><br>
+        Cálculo do último termo (n): a<sub>n</sub> = a<sub>1</sub> + (n-1) * r <br><br>
+        Soma de n termos: S<sub>n</sub> = (a<sub>1</sub> + a<sub>n</sub>) * n / 2 <br><br>
+    </section>
+
+    <div class="calculoPA">
+        a<sub>1</sub> = <input type="number" onchange="setpa_al()" id="pa_al">
+        r = <input type="number" onchange="setpa_r()" id="pa_r">
+        n = <input type="number" onchange="setpa_n()" id="pa_n">
+        Sequência: <span id="pa_seq"></span>
+    </div>
+
+
+    <section id="pg">
+        <h1> Progressão Geometrica </h1>
+        P.G. a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> ... a<sub>n</sub> <br><br>
+        Cálculo da razão: q = a<sub>2</sub> / a<sub>1</sub> <br><br>
+        Cálculo do último termo (n): a<sub>n</sub> = a<sub>1</sub> * q(n-1) <br><br>
+        Soma de n termos: S<sub>n</sub> = (a<sub>1</sub>( q<sup>n</sup> - 1)) / (q-1) <br><br>
+    </section>
+    <div class="calculoPG">
+        a<sub>1</sub> = <input type="number" onchange="setpg_al()" id="pg_al">
+        r = <input type="number" onchange="setpg_r()" id="pg_r">
+        n = <input type="number" onchange="setpg_n()" id="pg_n">
+        Sequência: <span id="pg_seq"></span>
+    </div>
+
+</body>
+
+</html>
