@@ -11,3 +11,13 @@
 .rodape {
     background-color: rgb(236, 204, 122);
 }
+
+.imagens{
+ width: 100%;
+ text-align: center;
+
+}
+#figura{
+     width: 360px;
+     height: 340px;
+}

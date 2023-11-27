@@ -198,7 +198,21 @@ const mostrarpa_seq = () => {
     document.getElementById("pa_seq").innerHTML = pa;
 }
 
+let num=0;
 
+
+const trocarimagem = () => {
+  num++;
+  setTimeout(() => {
+  document.getElementById("figura").src = "./imagem/num"+num+".png";
+ if(num == 3) num = 0;
+trocarimagem();
+},1000) 
+ 
+
+}
+
+trocarimagem();
 
 
 
